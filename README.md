@@ -21,7 +21,7 @@
 
 - 首先，该方法利用**双重注意力模块(Dual Attention Module，DAM)**分别从像素和通道两个维度的注意力机制对过曝光和欠曝光的两张源图像进行特征提取并融合，得到一张初步融合图像。接着，在此基础上构建**特征增强模块(Feature Enhancement Module，FEM)**分别对初步融合图像进行细节增强和颜色校正。然后，将图像传入**色调映射模块(Visual-Salience-Based Tone Mapping，VsbTM)**，利用显著性感知加权和所提出的滤波器的HDR图像局部色调映射算法，改善注意显著区域的视觉质量。最后，引用对比学习使生成图像更加接近参考图像的同时远离源图像。
 
-  <img src="https://p.ipic.vip/xfcxgz.jpg" alt="image-20240620232458720" style="zoom:50%;" />
+  <img src="https://p.ipic.vip/xfcxgz.jpg" alt="image-20240620232458720" style="zoom: 33%;" />
 
 - 经过多次训练，最终生成 HDR 图像。实验结果表明本文方法在 PSNR、SSIM和 LPIPS 指标上取得最优评价结果，生成的 HDR 图像色彩饱和度好且细节信息精准完整，且HDR 图像色调映射LDR图像无色晕伪影。
 
@@ -56,13 +56,13 @@
   from lpips import LPIPS
   ```
 
-| 技术             | 版本   | 说明                       |
-| ---------------- | ------ | -------------------------- |
-| **PyTorch**      | 1.12.1 | 开源的机器学习库           |
-| **Torchvision**  | 0.18   | PyTorch的扩展包            |
-| **Pillow**       | 10.3.0 | 图像处理库                 |
-| **Matplotlib**   | 3.9.0  | 绘图库                     |
-| **scikit-image** | 0.24.0 | 用于图像处理的Python库     |
+| 技术             | 版本   |            说明            |
+| ---------------- | ------ | :------------------------: |
+| **PyTorch**      | 1.12.1 |      开源的机器学习库      |
+| **Torchvision**  | 0.18   |      PyTorch的扩展包       |
+| **Pillow**       | 10.3.0 |         图像处理库         |
+| **Matplotlib**   | 3.9.0  |           绘图库           |
+| **scikit-image** | 0.24.0 |  用于图像处理的Python库-   |
 | **LPIPS**        | 0.1.4  | 用于计算图像感知相似度的库 |
 
 ### 数据集
@@ -77,33 +77,31 @@
 
 - 色调映射模块VsbTM工作
 
-  ![figb1](https://p.ipic.vip/5sgta2.png)
+  <img src="https://p.ipic.vip/5sgta2.png" alt="figb1" style="zoom:33%;" /><img src="https://p.ipic.vip/9qk01i.jpg" alt="figb2" style="zoom:33%;" /><img src="https://p.ipic.vip/80x2e7.png" alt="figb3" style="zoom:33%;" /><img src="https://p.ipic.vip/v5upha.png" alt="figb4" style="zoom:33%;" /><img src="https://p.ipic.vip/zml5g7.jpg" alt="figb5" style="zoom:33%;" />
 
-  ![figb2](https://p.ipic.vip/9qk01i.jpg)
+  <img src="https://p.ipic.vip/uy9v2s.png" alt="figb6" style="zoom:33%;" /><img src="https://p.ipic.vip/pbqtdt.png" alt="figb7" style="zoom:33%;" /><img src="https://p.ipic.vip/1092cm.jpg" alt="figb8" style="zoom:33%;" /><img src="https://p.ipic.vip/shv0ri.jpg" alt="figb9" style="zoom:33%;" /><img src="https://p.ipic.vip/7e60x3.png" alt="figb10" style="zoom:33%;" />
 
-  ![figb3](https://p.ipic.vip/80x2e7.png)
+  <img src="https://p.ipic.vip/lquyt4.png" alt="fig1" style="zoom:33%;" /><img src="https://p.ipic.vip/a9fcve.png" alt="fig2" style="zoom:33%;" /><img src="https://p.ipic.vip/7zns6c.png" alt="fig3" style="zoom:33%;" /><img src="https://p.ipic.vip/dff8e6.png" alt="fig4" style="zoom:33%;" /><img src="https://p.ipic.vip/vg9zns.png" alt="fig5" style="zoom:33%;" />
 
-  ![figb4](https://p.ipic.vip/v5upha.png)
-
-  ![figb5](https://p.ipic.vip/zml5g7.jpg)
-
-  ![figb6](https://p.ipic.vip/uy9v2s.png)
-
-  ![figb7](https://p.ipic.vip/pbqtdt.png)
-
-  ![figb8](https://p.ipic.vip/1092cm.jpg)
-
-  ![figb9](https://p.ipic.vip/shv0ri.jpg)
-
-  ![figb10](https://p.ipic.vip/7e60x3.png)
+  <img src="https://p.ipic.vip/j8pebz.png" alt="fig6" style="zoom:33%;" /><img src="https://p.ipic.vip/bqabh4.png" alt="fig7" style="zoom:33%;" /><img src="https://p.ipic.vip/u5r7xd.png" alt="fig8" style="zoom:33%;" /><img src="https://p.ipic.vip/apb1sa.png" alt="fig9" style="zoom:33%;" /><img src="https://p.ipic.vip/r8dwcq.png" alt="fig10" style="zoom:33%;" />
 
 - 原始的HDR图片
+
+  <img src="https://p.ipic.vip/wkb43l.png" alt="figb1" style="zoom: 67%;" />
+
+  <img src="https://p.ipic.vip/hnhvpm.png" alt="fig1" style="zoom:50%;" />
+
+  
+
+  
 
   
 
 - 色调映射后的LDR图片
 
+  <img src="https://p.ipic.vip/60gzxo.png" alt="figb10" style="zoom: 67%;" />
   
+  <img src="https://p.ipic.vip/j9nkkx.png" alt="fig10" style="zoom:50%;" />
 
 ### 小组分工
 
