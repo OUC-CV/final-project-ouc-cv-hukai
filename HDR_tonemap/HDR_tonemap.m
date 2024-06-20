@@ -14,7 +14,7 @@ end
  
 gamma=1/2.0;
 figure,imshow(hdr.^gamma);
-imwrite(hdr.^gamma,'原始HDR图像.png');
+imwrite(hdr.^gamma, 'figb1.png');
 %%  预处理，log域均值取指数结果映射到中性灰
 Lw = 0.299*hdr(:,:,1) + 0.587*hdr(:,:,2) + 0.144*hdr(:,:,3) + 1e-9; %论文推荐的world luminance计算公式,小偏移量为避免被0除的情况
 R = hdr(:,:,1) ./ Lw;
@@ -34,13 +34,17 @@ Ge=varBasedWeight(Lh); %\Gamma_e
 Lb=WGIF(Lh,Lh,r,eps,Ge); %加权引导滤波获得基底层
 Ld=Lh-Lb; %细节层
 figure,imshow(exp(Lb));
+imwrite(exp(Lb), 'figb2.png');
 figure,imshow(exp(Ld));
+imwrite(exp(Ld), 'figb3.png');
 meanLh=mean(Lh(:));
 compLb=Lb+log(a)-meanLh-log(1+a*exp(Lb-meanLh));
 figure,imshow(exp(compLb));
+imwrite(exp(compLb), 'figb4.png');
 theta=1.5; %细节缩放因子
 Lt=exp(compLb+theta*Ld);
 figure,imshow(Lt);
+imwrite(Lt, 'figb5.png');
 % 色彩还原
 rgb=zeros(size(Lw,1),size(Lw,2),3);
 rgb(:,:,1)=Lt.*R;
@@ -48,6 +52,7 @@ rgb(:,:,2)=Lt.*G;
 rgb(:,:,3)=Lt.*B;
 rgb=rgb.^gamma;
 figure,imshow(rgb);
+imwrite(rgb, 'figb6.png');
  
 %% 基于显著度的色调映射与色彩还原
 Gb=SaliencyBasedICH(Lh,20,4); %\Gamma_b
@@ -57,12 +62,15 @@ lambda=0.75;
 Gb=Gb.^lambda;
 Gb(Gb<1)=1;
 figure,imshow(Gb/max(Gb(:)));
+imwrite(Gb/max(Gb(:)), 'figb7.png');
 W2=Ge.*Gb;
 Lb2=WGIF(Lh,Lh,r,eps,W2); %加权引导滤波获得基底层
 Ld2=Lh-Lb2; %细节层
 figure,imshow(exp(Lb2));
+imwrite(exp(Lb2), 'figb8.png');
 figure,imshow(exp(Ld2));
- 
+imwrite(exp(Ld2), 'figb9.png');
+
 wLh=Gb.*Lh;
 meanLh2=sum(wLh(:))/sum(Gb(:));
 compLb2=Lb2+log(a)-meanLh2-log(1+a*exp(Lb2-meanLh2));
@@ -74,7 +82,7 @@ rgb2(:,:,2)=Lt2.*G;
 rgb2(:,:,3)=Lt2.*B;
 rgb2=rgb2.^gamma;
 figure,imshow(rgb2);
-imwrite(rgb2,'tonemap后HDR图像.png');
+imwrite(rgb2, 'figb10.png');
 
  
 function wM = varBasedWeight(img,phi)
