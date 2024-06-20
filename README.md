@@ -21,7 +21,7 @@
 
 - 首先，该方法利用**双重注意力模块(Dual Attention Module，DAM)**分别从像素和通道两个维度的注意力机制对过曝光和欠曝光的两张源图像进行特征提取并融合，得到一张初步融合图像。接着，在此基础上构建**特征增强模块(Feature Enhancement Module，FEM)**分别对初步融合图像进行细节增强和颜色校正。然后，将图像传入**色调映射模块(Visual-Salience-Based Tone Mapping，VsbTM)**，利用显著性感知加权和所提出的滤波器的HDR图像局部色调映射算法，改善注意显著区域的视觉质量。最后，引用对比学习使生成图像更加接近参考图像的同时远离源图像。
 
-  <img src="/Users/hukai/Library/Application Support/typora-user-images/image-20240620232458720.png" alt="image-20240620232458720" style="zoom:50%;" />
+  <img src="https://p.ipic.vip/xfcxgz.jpg" alt="image-20240620232458720" style="zoom:50%;" />
 
 - 经过多次训练，最终生成 HDR 图像。实验结果表明本文方法在 PSNR、SSIM和 LPIPS 指标上取得最优评价结果，生成的 HDR 图像色彩饱和度好且细节信息精准完整，且HDR 图像色调映射LDR图像无色晕伪影。
 
@@ -77,27 +77,39 @@
 
 - 色调映射模块VsbTM工作
 
-  <img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig1.png" alt="fig1" style="zoom: 33%;" /><img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig2.png" alt="fig2" style="zoom:33%;" /><img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig3.png" alt="fig3" style="zoom:33%;" /><img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig4.png" alt="fig4" style="zoom:33%;" />
+  ![figb1](https://p.ipic.vip/5sgta2.png)
 
-  <img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig5.png" alt="fig5" style="zoom:33%;" /><img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig6.png" alt="fig6" style="zoom:33%;" /><img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig7.png" alt="fig7" style="zoom:33%;" /><img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig8.png" alt="fig8" style="zoom:33%;" /><img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig9.png" alt="fig9" style="zoom:33%;" /><img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig10.png" alt="fig10" style="zoom:33%;" />
+  ![figb2](https://p.ipic.vip/9qk01i.jpg)
+
+  ![figb3](https://p.ipic.vip/80x2e7.png)
+
+  ![figb4](https://p.ipic.vip/v5upha.png)
+
+  ![figb5](https://p.ipic.vip/zml5g7.jpg)
+
+  ![figb6](https://p.ipic.vip/uy9v2s.png)
+
+  ![figb7](https://p.ipic.vip/pbqtdt.png)
+
+  ![figb8](https://p.ipic.vip/1092cm.jpg)
+
+  ![figb9](https://p.ipic.vip/shv0ri.jpg)
+
+  ![figb10](https://p.ipic.vip/7e60x3.png)
 
 - 原始的HDR图片
 
-  <img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig1.png" alt="fig1" style="zoom: 33%;" />
-
-  <img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/figb1.png" alt="figb1" style="zoom:50%;" />
+  
 
 - 色调映射后的LDR图片
 
-  <img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/fig10.png" alt="fig10" style="zoom: 33%;" />
-
-  <img src="/Users/hukai/Desktop/ComputerVisual/final-project-ouc-cv-hukai/HDR_tonemap/figb10.png" alt="figb10" style="zoom: 50%;" />
+  
 
 ### 小组分工
 
 - **[陈子豪](https://github.com/Chenzihao37)（%**）：主要负责构建模型双重注意力模块DAM及特征增强模块FEM
 
-- **[胡楷](https://github.com/wushirenhk?tab=stars)（%）**：主要负责模型色调映射模块VsbTM的复现工作，视频剪辑，技术文档撰写及项目维护
+- **[胡楷](https://github.com/wushirenhk?tab=repositories)（%）**：主要负责模型色调映射模块VsbTM的复现工作，视频剪辑，技术文档撰写及项目维护
 - **阮明航（13%）**：技术文档审稿修改
 
 ### 致谢
