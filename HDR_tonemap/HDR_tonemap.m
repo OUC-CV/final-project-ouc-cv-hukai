@@ -1,5 +1,5 @@
 close all;clc
-filename = './office.hdr';
+filename = './output_image.hdr';
 hdr = double(hdrread(filename));
 try
     hdr = double(hdrread(filename));
