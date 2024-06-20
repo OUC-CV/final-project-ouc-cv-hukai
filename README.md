@@ -17,3 +17,28 @@
 ### 复现文档
 
 ​	方法在 PSNR、SSIM和 LPIPS 指标上取得最优评价结果，生成的 HDR 图像色彩饱和度好且细节信息精准完整，且HDR 图像色调映射LDR图像无色晕伪影。
+
+
+
+### 复现演示地址
+
+
+
+### 技术选型
+
+
+
+### 数据集
+
+
+
+### 成果展示
+
+
+
+### 致谢
+
+​	我们的复现文章受文章[《基于双重注意力网络的高动态范围图像重建》](https://kns.cnki.net/kcms2/article/abstract?v=f1ZyUc11mdp2Qm0cZuNbrjJiBOJ7oHoKX0mQCajH5KW61RJgv1UjTeS75D9cV5CYQRGjypth9MSb487U0hLVOBefSFJLv-TqOJ_DS2rBz-hTC6EI-d2Wf_O7zistXOA25XuJg81ef3Y=&uniplatform=NZKPT&language=CHS)和文章[《Visual-Salience-Based Tone Mapping for High Dynamic Range Images》](https://ieeexplore.ieee.org/abstract/document/6779648)启发，再次感谢。
+
+
+
