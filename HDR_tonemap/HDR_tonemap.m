@@ -16,7 +16,7 @@ gamma=1/2.0;
 figure,imshow(hdr.^gamma);
 imwrite(hdr.^gamma, 'figb1.png');
 %%  预处理，log域均值取指数结果映射到中性灰
-Lw = 0.299*hdr(:,:,1) + 0.587*hdr(:,:,2) + 0.144*hdr(:,:,3) + 1e-9; %论文推荐的world luminance计算公式,小偏移量为避免被0除的情况
+Lw = 0.299*hdr(:,:,1) + 0.587*hdr(:,:,2) + 0.144*hdr(:,:,3) + 1e-9;
 R = hdr(:,:,1) ./ Lw;
 G = hdr(:,:,2) ./ Lw;
 B = hdr(:,:,3) ./ Lw;

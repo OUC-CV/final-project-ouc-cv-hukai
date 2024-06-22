@@ -7,13 +7,17 @@
 ### 方案选择
 
 - **这是一个论文复现项目**
+- 我们选择基于[《基于双重注意力网络的高动态范围图像重建》](https://kns.cnki.net/kcms2/article/abstract?v=f1ZyUc11mdp2Qm0cZuNbrjJiBOJ7oHoKX0mQCajH5KW61RJgv1UjTeS75D9cV5CYQRGjypth9MSb487U0hLVOBefSFJLv-TqOJ_DS2rBz-hTC6EI-d2Wf_O7zistXOA25XuJg81ef3Y=&uniplatform=NZKPT&language=CHS)和[《Visual-Salience-Based Tone Mapping for High Dynamic Range Images》](https://ieeexplore.ieee.org/abstract/document/6779648)两篇文章进行论文**复现**，并对前文已有方法进行了改进。将现有方法进行复现和融合，得到了**一种基于双重注意力网络的高动态范围图像重建及色调映射方法**👀复现参考的论文已传至该仓库reference paper文件夹中
 
-- 我们选择基于[《基于双重注意力网络的高动态范围图像重建》](https://kns.cnki.net/kcms2/article/abstract?v=f1ZyUc11mdp2Qm0cZuNbrjJiBOJ7oHoKX0mQCajH5KW61RJgv1UjTeS75D9cV5CYQRGjypth9MSb487U0hLVOBefSFJLv-TqOJ_DS2rBz-hTC6EI-d2Wf_O7zistXOA25XuJg81ef3Y=&uniplatform=NZKPT&language=CHS)和[《Visual-Salience-Based Tone Mapping for High Dynamic Range Images》](https://ieeexplore.ieee.org/abstract/document/6779648)两篇文章进行论文**复现**，并对前文已有方法进行了改进。将现有方法进行复现和融合，得到了**一种基于双重注意力网络的高动态范围图像重建及色调映射方法**👀
+### 复现演示地址
+
+- 请查看我们的bilibili视频
+- 欢迎为我们的[b站视频](https://www.bilibili.com/video/BV1rpgaeCE55/?vd_source=9e77deab9cbf476a360f590847f021a1)一键三连🤩🥳
 
 ### 项目背景
 
 - 当前市场上的摄影设备所捕捉到的图像动态范围往往远不及自然环境。这种低动态范围LDR的图像常常会出现过度曝光或曝光不足的区域，导致图像细节的丢失和色彩饱和度的下降。与此相对，高动态范围HDR技术能够提供更宽广的亮度范围、更丰富的色彩表现以及更完整的细节展示，因此受到广泛关注
-- 目前大多数传统显示设备只有有限的动态范围，无法显示HDR图像。HDR图像与显示设备的范围存在巨大差异，因此有必要对HDR图像进行压缩，以便在这些普通的LDR显示设备上同时再现两个极端的光影区域的外观。
+- ###### 目前大多数传统显示设备只有有限的动态范围，无法显示HDR图像。HDR图像与显示设备的范围存在巨大差异，因此有必要对HDR图像进行压缩，以便在这些普通的LDR显示设备上同时再现两个极端的光影区域的外观。
 
 ### 方法简介
 
@@ -27,16 +31,11 @@
 
 ### 复现文档
 
-- 复现文档已传至该项目papers文件夹中，为*基于双重注意力网络的高动态范围图像重建及色调映射.pdf*📄
+- 复现文档已传至该项目paper文件夹中，为*基于双重注意力网络的高动态范围图像重建及色调映射.pdf*📄
 
 ### 功能说明
 
 - 传入一张.jpg或者.png格式的照片🌄，通过双重注意力模块DAM，特征增强模块FEM后，便能得到一张高动态范围.hdr照片🌅，将.hdr照片传入色调映射模块VsbTM，即可得到符合个人用户显示屏的无色晕伪影的可用显示屏观看的LDR照片🌠
-
-### 复现演示地址
-
-- 请查看我们的bilibili视频
-- 欢迎为我们的[b站视频](https://space.bilibili.com/29526681?spm_id_from=333.1007.0.0)一键三连🤩🥳（缺少视频）
 
 ### 技术选型
 
@@ -117,7 +116,8 @@
 
 
 
-​																				胡楷 2024.06.20
+​																				 							胡楷 2024.06.20
 
 
 
+#### 
