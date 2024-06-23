@@ -16,8 +16,8 @@
 
 ### 项目背景
 
-- 当前市场上的摄影设备所捕捉到的图像动态范围往往远不及自然环境。这种低动态范围LDR的图像常常会出现过度曝光或曝光不足的区域，导致图像细节的丢失和色彩饱和度的下降。与此相对，高动态范围HDR技术能够提供更宽广的亮度范围、更丰富的色彩表现以及更完整的细节展示，因此受到广泛关注
-- ###### 目前大多数传统显示设备只有有限的动态范围，无法显示HDR图像。HDR图像与显示设备的范围存在巨大差异，因此有必要对HDR图像进行压缩，以便在这些普通的LDR显示设备上同时再现两个极端的光影区域的外观。
+- 当前市场上的摄影设备所捕捉到的图像动态范围往往**远不及自然环境**。这种低动态范围LDR的图像常常会出现过度曝光或曝光不足的区域，导致图像细节的丢失和色彩饱和度的下降。与此相对，高动态范围HDR技术能够提供更宽广的亮度范围、更丰富的色彩表现以及更完整的细节展示，因此受到广泛关注
+- 目前大多数传统显示设备只有有限的动态范围，**LDR设备无法显示HDR图像**。HDR图像与显示设备的范围存在巨大差异，因此有必要对HDR图像进行压缩，以便在这些普通的LDR显示设备上同时再现极端的光影区域，使得图片在LDR设备上的显示效果更为接近实际HDR图像的真实观感
 
 ### 方法简介
 
@@ -31,7 +31,7 @@
 
 ### 复现文档
 
-- 复现文档已传至该项目paper文件夹中，为*基于双重注意力网络的高动态范围图像重建及色调映射.pdf*📄
+- 复现文档已传至该仓库，为*基于双重注意力网络的高动态范围图像重建及色调映射.pdf*📄
 
 ### 功能说明
 
@@ -66,11 +66,35 @@
 
 ### 数据集
 
-- 本次实验采用公开的 SICE数据集。在数据集中，其中一部分的图像序列中仅包含 3 张曝光图像或者只有一系列的欠曝图像，不符合实验要求。因此，本实验首先手动去除了个别无效数据，并收集了 589 个图像序列，每个序列包括一系列曝光图像，即过度曝光图像、正常曝光图像和曝光不足图像，其中每个序列都对应有一张高质量的 HDR 参考图像。
+- 本次实验采用公开的 [SICE数据集](https://github.com/csjcai/SICE)。SICE数据集包含一系列曝光程度的图像，其中大部分都是含有6张由高到低曝光程度图片和一张参考图片，我们选取其中的低曝光图片（从12中选择），选取其中的高曝光图片（从56中选择）。将其作为我们的低曝光图，高曝光图和参考图像
 
 ### 成果展示
 
 - 双重注意力模块DAM及特征增强模块FEM
+
+  <img src="https://p.ipic.vip/hgrh3h.png" alt="image-20240623103047533" style="zoom: 33%;" />
+
+  <img src="https://p.ipic.vip/mndp5k.png" alt="image-20240623103103346" style="zoom:33%;" />
+
+  <img src="https://p.ipic.vip/l5iogz.png" alt="image-20240623103119019" style="zoom: 67%;" />
+
+  <img src="https://p.ipic.vip/3ipahz.png" alt="image-20240623103145295" style="zoom:33%;" />
+
+  <img src="/Users/hukai/Library/Application Support/typora-user-images/image-20240623103154497.png" alt="image-20240623103154497" style="zoom:33%;" />
+
+  <img src="/Users/hukai/Library/Application Support/typora-user-images/image-20240623103204946.png" alt="image-20240623103204946" style="zoom:67%;" />
+
+  <img src="/Users/hukai/Library/Application Support/typora-user-images/image-20240623103217743.png" alt="image-20240623103217743" style="zoom:33%;" />
+
+  <img src="/Users/hukai/Library/Application Support/typora-user-images/image-20240623103224709.png" alt="image-20240623103224709" style="zoom:33%;" />
+
+  <img src="/Users/hukai/Library/Application Support/typora-user-images/image-20240623103233674.png" alt="image-20240623103233674" style="zoom: 67%;" />
+
+  <img src="/Users/hukai/Library/Application Support/typora-user-images/image-20240623103250111.png" alt="image-20240623103250111" style="zoom: 33%;" />
+
+  <img src="/Users/hukai/Library/Application Support/typora-user-images/image-20240623103257500.png" alt="image-20240623103257500" style="zoom:33%;" />
+
+  <img src="/Users/hukai/Library/Application Support/typora-user-images/image-20240623103306018.png" alt="image-20240623103306018" style="zoom:67%;" />
 
   
 
@@ -104,10 +128,10 @@
 
 ### 小组分工
 
-- **[陈子豪](https://github.com/Chenzihao37)（%**）：主要负责第一篇论文的复现，构建双重注意力模块DAM，特征增强模块FEM及损失函数，并进行指标分析和相关内容介绍
+- **[陈子豪](https://github.com/Chenzihao37)（4%**）：主要负责第一篇论文的复现，构建双重注意力模块DAM，特征增强模块FEM及损失函数，并进行指标分析和相关内容介绍
 
-- **[胡楷](https://github.com/wushirenhk?tab=repositories)（%）**：主要负责模型色调映射模块VsbTM的复现工作，视频剪辑，技术文档撰写及项目维护
-- **阮明航（13%）**：技术文档审稿修改
+- **[胡楷](https://github.com/wushirenhk?tab=repositories)（4%）**：主要负责模型色调映射模块VsbTM的复现工作，视频剪辑，技术文档撰写及项目维护
+- **[阮明航](https://github.com/shiper-rmh)（13%）**：技术文档审稿修改
 
 ### 致谢
 
