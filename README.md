@@ -25,7 +25,7 @@
 
 - 首先，该方法利用**双重注意力模块(Dual Attention Module，DAM)**分别从像素和通道两个维度的注意力机制对过曝光和欠曝光的两张源图像进行特征提取并融合，得到一张初步融合图像。接着，在此基础上构建**特征增强模块(Feature Enhancement Module，FEM)**分别对初步融合图像进行细节增强和颜色校正。然后，将图像传入**色调映射模块(Visual-Salience-Based Tone Mapping，VsbTM)**，利用显著性感知加权和所提出的滤波器的HDR图像局部色调映射算法，改善注意显著区域的视觉质量。最后，引用对比学习使生成图像更加接近参考图像的同时远离源图像。
 
-  <img src="https://p.ipic.vip/xfcxgz.jpg" alt="image-20240620232458720" style="zoom: 33%;" />
+  <img src="https://p.ipic.vip/xfcxgz.jpg" alt="image-20240620232458720" style="zoom: 67%;" />
 
 - 经过多次训练，最终生成 HDR 图像。实验结果表明本文方法在 PSNR、SSIM和 LPIPS 指标上取得最优评价结果，生成的 HDR 图像色彩饱和度好且细节信息精准完整，且HDR 图像色调映射LDR图像无色晕伪影。
 
@@ -66,33 +66,27 @@
 
 ### 数据集
 
-- 本次实验采用公开的 [SICE数据集](https://github.com/csjcai/SICE)。SICE数据集包含一系列曝光程度的图像，其中大部分都是含有6张由高到低曝光程度图片和一张参考图片，我们选取其中的低曝光图片（从12中选择），选取其中的高曝光图片（从56中选择）。将其作为我们的低曝光图，高曝光图和参考图像
+- 本次实验采用公开的 [SICE数据集](https://github.com/csjcai/SICE)。SICE数据集包含一系列曝光程度的图像，其中大部分都是含有6张由高到低曝光程度图片和一张参考图片，我们选取了一共6组数据作为我们的实验数据。并提取数据集文件夹中低曝光图，高曝光图和参考图像作为输入和结果参考。s
 
 ### 成果展示
 
 - 双重注意力模块DAM及特征增强模块FEM
 
-  <img src="https://p.ipic.vip/hgrh3h.png" alt="image-20240623103047533" style="zoom: 33%;" />
+  <img src="https://p.ipic.vip/hmfe8g.png" alt="merged_image" style="zoom:33%;" />
 
-  <img src="https://p.ipic.vip/mndp5k.png" alt="image-20240623103103346" style="zoom:33%;" />
+  
 
   <img src="https://p.ipic.vip/l5iogz.png" alt="image-20240623103119019" style="zoom: 67%;" />
 
-  <img src="https://p.ipic.vip/3ipahz.png" alt="image-20240623103145295" style="zoom:33%;" />
-
-  <img src="https://p.ipic.vip/l03rzh.jpg" alt="image-20240623103154497" style="zoom:33%;" />
+  <img src="https://p.ipic.vip/2p0s91.png" alt="merged_image (1)" style="zoom:33%;" />
 
   <img src="https://p.ipic.vip/ecl2q0.jpg" alt="image-20240623103204946" style="zoom:67%;" />
 
-  <img src="https://p.ipic.vip/plm4v0.jpg" alt="image-20240623103217743" style="zoom:33%;" />
-
-  <img src="https://p.ipic.vip/ei7y7m.jpg" alt="image-20240623103224709" style="zoom:33%;" />
+  <img src="https://p.ipic.vip/5oniad.jpg" alt="merged_image (2)" style="zoom:33%;" />
 
   <img src="https://p.ipic.vip/zzw3uy.jpg" alt="image-20240623103233674" style="zoom: 67%;" />
 
-  <img src="https://p.ipic.vip/gjkthm.jpg" alt="image-20240623103250111" style="zoom: 33%;" />
-
-  <img src="https://p.ipic.vip/ugsnzn.jpg" alt="image-20240623103257500" style="zoom:33%;" />
+  <img src="https://p.ipic.vip/zy1g5f.png" alt="merged_image (3)" style="zoom:33%;" />
 
   <img src="https://p.ipic.vip/kn1476.jpg" alt="image-20240623103306018" style="zoom:67%;" />
 
@@ -128,9 +122,9 @@
 
 ### 小组分工
 
-- **[陈子豪](https://github.com/Chenzihao37)（4%**）：主要负责第一篇论文的复现，构建双重注意力模块DAM，特征增强模块FEM及损失函数，并进行指标分析和相关内容介绍
+- **[陈子豪](https://github.com/Chenzihao37)（45%**）：主要负责第一篇论文的复现，构建双重注意力模块DAM，特征增强模块FEM及损失函数，并进行指标分析和相关内容介绍
 
-- **[胡楷](https://github.com/wushirenhk?tab=repositories)（4%）**：主要负责模型色调映射模块VsbTM的复现工作，视频剪辑，技术文档撰写及项目维护
+- **[胡楷](https://github.com/wushirenhk?tab=repositories)（42%）**：主要负责模型色调映射模块VsbTM的复现工作，视频剪辑，技术文档撰写及项目维护
 - **[阮明航](https://github.com/shiper-rmh)（13%）**：技术文档审稿修改
 
 ### 致谢
@@ -140,8 +134,4 @@
 
 
 
-​																				 							胡楷 2024.06.20
-
-
-
-#### 
+​																				 							胡楷 2024.06.23
